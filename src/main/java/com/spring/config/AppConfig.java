@@ -5,6 +5,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -17,10 +20,14 @@ import com.spring.dao.impl.StudentDAOImpl;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages="com.spring.controllers")
+@PropertySources({@PropertySource("classpath:ds/datasource-cfg.properties")})
 public class AppConfig implements WebMvcConfigurer{
 	
 	@Autowired
 	ApplicationContext applicationContext;
+	
+	@Autowired
+	private Environment env;
 	
 	@Bean
 	public ViewResolver viewResolver() {
@@ -35,15 +42,15 @@ public class AppConfig implements WebMvcConfigurer{
 	@Bean
 	DriverManagerDataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/spring?useSSL=false");
-		dataSource.setUsername("root");
-		//dataSource.setPassword("root");
+		dataSource.setDriverClassName(env.getProperty("ds.database-driver"));
+		dataSource.setUrl(env.getProperty("ds.url"));
+		dataSource.setUsername(env.getProperty("ds.username"));
+		//dataSource.setPassword(env.getProperty("ds.password"));
 		return dataSource;
 	}
 	
 	@Bean
-	public StudentDAO getUserDao() {
+	public StudentDAO getStudentDao() {
 		return new StudentDAOImpl(getDataSource());
 	}
 	

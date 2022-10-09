@@ -12,8 +12,10 @@ import com.spring.models.Student;
 import coim.spring.rowmapper.StudentRowMapper;
 
 public class StudentDAOImpl implements StudentDAO {
-	
-	
+	////
+	// for xml config
+	private DataSource dataSource;
+	////
 	private JdbcTemplate jdbcTemplate;
 	
 	public StudentDAOImpl(DataSource dataSource) {
@@ -42,7 +44,7 @@ public class StudentDAOImpl implements StudentDAO {
 	@Override
 	public Student getStudentById(int id) {
 
-		String sql="SELECT `student_id`, `name`, `age`, `city` FROM `student` WHERE `id`=?";
+		String sql="SELECT `id`,`student_id`, `name`, `age`, `city` FROM `student` WHERE `id`=?";
 		return jdbcTemplate.queryForObject(sql, new Object[] {id},new StudentRowMapper());
 	}
 	
@@ -60,6 +62,13 @@ public class StudentDAOImpl implements StudentDAO {
 
 		String sql="DELETE FROM `student` WHERE `id`="+id;
 		return jdbcTemplate.update(sql);
+	}
+	
+	// for xml config
+	@Override
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource=dataSource;
+		this.jdbcTemplate= new JdbcTemplate(dataSource);
 	}
 
 
