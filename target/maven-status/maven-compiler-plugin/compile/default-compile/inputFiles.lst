@@ -1,8 +1,15 @@
-C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\dao\impl\StudentDAOImpl.java
+C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\security\SecurityConfiguration.java
+C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\dao\impl\UserDAOImpl.java
 C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\config\AppConfig.java
 C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\dao\StudentDAO.java
+C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\dao\UserDAO.java
 C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\controllers\StudentController.java
 C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\models\Student.java
 C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\coim\spring\rowmapper\StudentRowMapper.java
 C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\config\MainApp.java
+C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\controllers\RegisterController.java
+C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\models\User.java
+C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\dao\impl\StudentDAOImpl.java
+C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\controllers\LoginController.java
+C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\controllers\LogoutController.java
 C:\Users\princ\Desktop\projects\SpringDatabase\src\main\java\com\spring\dto\StudentDTO.java

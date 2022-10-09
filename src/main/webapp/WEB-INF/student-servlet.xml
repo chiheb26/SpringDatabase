@@ -37,6 +37,11 @@
     <property name="dataSource" ref="dataSource"/>
    
 	</bean>
+	
+	<bean id="userDao"
+      class="com.spring.dao.impl.UserDAOImpl"> 
+     <property name="dataSource" ref="dataSource"/>
+	</bean>
     <!-- ... -->
     
         <mvc:annotation-driven />
